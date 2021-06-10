@@ -14,7 +14,9 @@ There's two input sources. One is set to Front Mic, the other to Rear Mic.
 Do you have a sound card that supports recording from two inputs at once?
 
 Example: Recording from microphone and line in.
+
 Example: https://forum.manjaro.org/t/how-to-separe-ports-into-different-devices-on-pulseaudio/55890
+
 Example: https://unix.stackexchange.com/questions/373122/how-to-split-ports-in-a-source-into-separate-sources-in-pulseaudio
 
 PulseAudio may not expose this to your system, so I've made some profiles to help.
