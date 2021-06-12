@@ -24,6 +24,7 @@ PulseAudio may not expose this to your system, so I've made some profiles to hel
 Tested cards:
 
 - Advanced Micro Devices, Inc. [AMD] Starship/Matisse HD Audio Controller (PCI vendor 1022 product 1487)
+- Intel Corporation 200 Series PCH HD Audio (PCI vendor 8086 product a2f0)
 
 # Installation
 
