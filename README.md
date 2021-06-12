@@ -30,9 +30,9 @@ Tested cards:
 
 Follow these steps:
 
-1. Run 'sudo install.sh' to install
-2. Check if you now have an extra audio input in PulseAudio
-3. Run 'sudo uninstall.sh' to uninstall
+1. Run 'sudo install.sh' to install, or 'sudo uninstall.sh' to uninstall
+3. Run 'systemctl --user restart pulseaudio'
+2. Check if you have an extra audio input in PulseAudio
 
 # Tweaking guide
 
