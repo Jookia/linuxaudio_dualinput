@@ -45,7 +45,7 @@ Run lspci -nn and find your audio line like this:
 
 - 0b:00.4 Audio device [0403]: Advanced Micro Devices, Inc. [AMD] Starship/Matisse HD Audio Controller [1022:1487]
 
-The numbers in the brackets at the end are the vendor ID.
+The numbers in the brackets at the end are the vendor ID and product ID.
 Update the rules in the udev directory to match against that.
 
 ## pulseaudio profiles
