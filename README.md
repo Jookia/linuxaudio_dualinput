@@ -1,3 +1,5 @@
+Quick note: Despite the name, this supports PipeWire.
+
 # Screenshot
 
 ![Screenshot, see detailed captain below](screenshot.png)
@@ -19,7 +21,7 @@ Example: https://forum.manjaro.org/t/how-to-separe-ports-into-different-devices-
 
 Example: https://unix.stackexchange.com/questions/373122/how-to-split-ports-in-a-source-into-separate-sources-in-pulseaudio
 
-PulseAudio may not expose this to your system, so I've made some profiles to help.
+PulseAudio/PipeWire may not expose this to your system, so I've made some profiles to help.
 
 Tested cards:
 
@@ -31,7 +33,8 @@ Tested cards:
 Follow these steps:
 
 1. Run 'sudo install.sh' to install, or 'sudo uninstall.sh' to uninstall
-3. Run 'systemctl --user restart pulseaudio'
+3a. Run 'systemctl --user restart pulseaudio', or
+3b. Run 'systemctl --user restart pipewire pipewire-pulse'
 2. Check if you have an extra audio input in PulseAudio
 
 # Tweaking guide
@@ -48,7 +51,7 @@ Run lspci -nn and find your audio line like this:
 The numbers in the brackets at the end are the vendor ID and product ID.
 Update the rules in the udev directory to match against that.
 
-## pulseaudio profiles
+## Audio profiles
 
 Make sure the 'device-strings' in the profile matches your device.
 To find it, do this:
@@ -57,10 +60,11 @@ To find it, do this:
 - Note down the device number for the second input
 - In the 'device-strings' for analog-stereo-aux, change the '2' to the device number
 
-## pulseaudio paths
+## Audio paths
 
-The rest of the tweaking is just messing with pulseaudio.
+The rest of the tweaking is just messing with PulseAudio and PipeWire.
 It's not that difficult, look at the existing code in /usr/share/pulseaudio/alsa-mixer/paths/
+or /usr/share/alsa-card-profile/mixer/ for PipeWire.
 
 The code in this repository is basically a subset of those files with 'Capture' and 'Input Source' set to 'Capture,1' and 'Input Source,1' in the various paths, split out to new files, with a new profile that builds on the default.
 

@@ -5,7 +5,10 @@ if test "${SUDO_USER}" == ""; then
   exit 1
 fi
 cp -v udev/* /etc/udev/rules.d/
-cp -v profiles/* /usr/share/pulseaudio/alsa-mixer/profile-sets/
-cp -v paths/* /usr/share/pulseaudio/alsa-mixer/paths/
+for i in /usr/share/pulseaudio/alsa-mixer /usr/share/alsa-card-profile/mixer; do
+  test -d $i || continue
+  cp -v profiles/* $i/profile-sets/
+  cp -v paths/* $i/paths/
+done
 udevadm trigger -ssound
 exit 0

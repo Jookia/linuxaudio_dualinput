@@ -5,7 +5,10 @@ if test "${SUDO_USER}" == ""; then
   exit 1
 fi
 rm /etc/udev/rules.d/91-pulseaudio-aux.rules
-rm /usr/share/pulseaudio/alsa-mixer/profile-sets/custom-aux.conf
-rm /usr/share/pulseaudio/alsa-mixer/paths/custom-aux-*.conf
+for i in /usr/share/pulseaudio/alsa-mixer /usr/share/alsa-card-profile/mixer; do
+  test -d $i || continue
+  rm $i/profile-sets/custom-aux.conf
+  rm $i/paths/custom-aux-*.conf
+done
 udevadm trigger -ssound
 exit 0

@@ -4,5 +4,7 @@ KERNEL!="card*", GOTO="pulseaudio_end"
 
 SUBSYSTEMS=="pci", ATTRS{vendor}=="0x1022", ATTRS{device}=="0x1487", ENV{PULSE_PROFILE_SET}="custom-aux.conf"
 SUBSYSTEMS=="pci", ATTRS{vendor}=="0x8086", ATTRS{device}=="0xa2f0", ENV{PULSE_PROFILE_SET}="custom-aux.conf"
+SUBSYSTEMS=="pci", ATTRS{vendor}=="0x1022", ATTRS{device}=="0x1487", ENV{ACP_PROFILE_SET}="custom-aux.conf"
+SUBSYSTEMS=="pci", ATTRS{vendor}=="0x8086", ATTRS{device}=="0xa2f0", ENV{ACP_PROFILE_SET}="custom-aux.conf"
 
 LABEL="pulseaudio_end"
