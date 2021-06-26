@@ -1,5 +1,3 @@
-Quick note: Despite the name, this supports PipeWire.
-
 # Screenshot
 
 ![Screenshot, see detailed captain below](screenshot.png)
